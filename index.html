@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wet Lab Resource Management System</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* Header */
+header {
+    background: #1f3c88;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    padding: 30px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Search */
+input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    background: #1f3c88;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #162d66;
+}
+
+/* Equipment list */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+</style>
+
+<script>
+function searchEquipment() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let items = document.getElementsByClassName("equipment");
+
+    for (let i = 0; i < items.length; i++) {
+        let text = items[i].innerText.toLowerCase();
+        items[i].style.display = text.includes(input) ? "" : "none";
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Wet Lab Resource Management System</h1>
+    <p>Organizing lab equipment, requests, and workflows</p>
+</header>
+
+<div class="container">
+
+    <!-- Search + Inventory -->
+    <div class="card">
+        <h2>🔍 Search Equipment</h2>
+        <input type="text" id="search" onkeyup="searchEquipment()" placeholder="Search equipment...">
+
+        <ul>
+            <li class="equipment">Microscope</li>
+            <li class="equipment">Centrifuge</li>
+            <li class="equipment">Pipette Kit</li>
+            <li class="equipment">Incubator</li>
+            <li class="equipment">PCR Machine</li>
+        </ul>
+    </div>
+
+    <!-- Request Form -->
+    <div class="card">
+        <h2>📝 Request Equipment</h2>
+        <p>Submit a request using the form below:</p>
+
+        <!-- REPLACE LINK BELOW WITH YOUR GOOGLE FORM -->
+        <a href="https://forms.gle/" target="_blank">
+            <button>Submit Request</button>
+        </a>
+    </div>
+
+    <!-- Features -->
+    <div class="card">
+        <h2>⚙️ System Features</h2>
+        <ul>
+            <li>Searchable equipment inventory</li>
+            <li>Form-based request workflow</li>
+            <li>Structured data organization</li>
+            <li>User-friendly interface</li>
+        </ul>
+    </div>
+
+    <!-- About -->
+    <div class="card">
+        <h2>📌 About This Project</h2>
+        <p>
+        This is a prototype web system designed to simulate how a lab or makerspace can manage resources,
+        organize inventory, and streamline user requests through a simple web interface.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
